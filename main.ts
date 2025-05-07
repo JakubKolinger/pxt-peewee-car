@@ -8,9 +8,9 @@ let P: number = 0;
 radio.onReceivedString(function (received) {
     let casti = received.split("|")
 
-    if (casti.length == 4 && casti[0] == "S") {
+    if (casti.length === 4 && casti[0] === "S") {
         let klicPrijaty = parseInt(casti[1])
-        if (klicPrijaty == 42) {
+        if (klicPrijaty === 42) {
             L = parseInt(casti[2])
             P = parseInt(casti[3])
             
