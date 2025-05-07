@@ -21,10 +21,12 @@ radio.onReceivedString(function (received) {
         }
     }
 })
+
 loops.everyInterval(60000, function() {
     L = 0
     P = 0
 })
+
 basic.forever(function() {
     
     PCAmotor.MotorRun(PCAmotor.Motors.M1, L)
