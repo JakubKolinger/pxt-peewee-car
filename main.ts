@@ -1,5 +1,5 @@
 radio.setGroup(43)
-radio.setTransmitPower(100)
+radio.setTransmitPower(7)
 
 let servo = ServoHelper.createServo()
 let L: number = 0;
