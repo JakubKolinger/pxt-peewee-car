@@ -20,7 +20,7 @@ radio.onReceivedString(function (received) {
     }
 })
 
-while (P < 0 && P > 0 && L < 0 && L > 0) {
+while (P < 0 || P > 0 || L < 0 || L > 0) {
     basic.showIcon(IconNames.Yes)
 }
 
