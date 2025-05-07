@@ -1,1 +1,30 @@
+radio.setGroup(143)
+
+
 let servo = ServoHelper.createServo()
+let L: number = 0;
+let P: number = 0;
+
+radio.onReceivedString(function (received) {
+    let casti = received.split("|")
+
+    if (casti.length == 4 && casti[0] == "S") {
+        let klicPrijaty = parseInt(casti[1])
+        if (klicPrijaty == 42) {
+            L = parseInt(casti[2])
+            P = parseInt(casti[3])
+            
+            basic.showIcon(IconNames.Yes)
+        } else {
+            basic.showIcon(IconNames.No)
+            
+        }
+    }
+})
+
+basic.forever(function() {
+    
+    PCAmotor.MotorRun(PCAmotor.Motors.M1, L)
+
+    PCAmotor.MotorRun(PCAmotor.Motors.M4, P)
+})
