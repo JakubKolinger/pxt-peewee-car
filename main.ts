@@ -5,6 +5,8 @@ let servo = ServoHelper.createServo()
 let L: number = 0;
 let P: number = 0;
 
+basic.showIcon(IconNames.Happy)
+
 radio.onReceivedString(function (received) {
     let casti = received.split("|")
 
@@ -20,9 +22,7 @@ radio.onReceivedString(function (received) {
     }
 })
 
-while (P < 0 || P > 0 || L < 0 || L > 0) {
-    basic.showIcon(IconNames.Yes)
-}
+
 
 basic.forever(function() {
     
