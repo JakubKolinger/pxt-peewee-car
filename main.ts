@@ -14,18 +14,15 @@ radio.onReceivedString(function (received) {
             L = parseInt(casti[2])
             P = parseInt(casti[3])
             
-            basic.showIcon(IconNames.Yes)
-        } else {
-            basic.showIcon(IconNames.No)
+            
             
         }
     }
 })
 
-loops.everyInterval(60000, function() {
-    L = 0
-    P = 0
-})
+while (P < 0 && P > 0 && L < 0 && L > 0) {
+    basic.showIcon(IconNames.Yes)
+}
 
 basic.forever(function() {
     
