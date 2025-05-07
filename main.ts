@@ -1,5 +1,5 @@
-radio.setGroup(143)
-
+radio.setGroup(43)
+radio.setTransmitPower(1000)
 
 let servo = ServoHelper.createServo()
 let L: number = 0;
@@ -10,7 +10,7 @@ radio.onReceivedString(function (received) {
 
     if (casti.length === 4 && casti[0] === "S") {
         let klicPrijaty = parseInt(casti[1])
-        if (klicPrijaty === 42) {
+        if (klicPrijaty === 43) {
             L = parseInt(casti[2])
             P = parseInt(casti[3])
             
@@ -26,5 +26,5 @@ basic.forever(function() {
     
     PCAmotor.MotorRun(PCAmotor.Motors.M1, L)
 
-    PCAmotor.MotorRun(PCAmotor.Motors.M4, P)
+    PCAmotor.MotorRun(PCAmotor.Motors.M4, P * -1)
 })
