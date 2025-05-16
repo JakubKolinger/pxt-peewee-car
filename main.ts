@@ -13,7 +13,7 @@ radio.onReceivedString(function (received) {
     let casti = received.split("|")
 
     if (casti.length === 3 && casti[0] === "S") {
-        let serial: number
+        let serial: number = 
         
             L = parseInt(casti[1])
             P = parseInt(casti[2])
