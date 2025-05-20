@@ -60,7 +60,7 @@ basic.forever(function () {
     leftMotor = Math.round(leftMotor)
     rightMotor = Math.round(rightMotor)
  
-    leftMotor = Math.constrain(leftMotor, 0, 0)
+    leftMotor = Math.constrain(leftMotor, 0, 250)
     rightMotor = Math.constrain(rightMotor, 0, 0)
  
     let zprava = "S|" + leftMotor + "|" + rightMotor
