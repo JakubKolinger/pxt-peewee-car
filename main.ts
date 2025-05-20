@@ -33,6 +33,8 @@ basic.forever(function() {
     PCAmotor.MotorRun(PCAmotor.Motors.M4, P * -1)
 })
 
+
+
 radio.setGroup(234) //tomáš
 const heslo: string = "njimok@<>"
 radio.setGroup(37) //roman
@@ -50,8 +52,8 @@ radio.setFrequencyBand(50)
  
 basic.forever(function () {
  
-  leftMotor = Math.constrain(leftMotor, 0, 250)
-    rightMotor = Math.constrain(rightMotor, 0, 0)
+let leftMotor: number = 250
+let rightMotor: number = 0
  
     let zprava = "S|" + leftMotor + "|" + rightMotor
  
