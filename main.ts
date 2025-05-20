@@ -13,10 +13,13 @@ radio.onReceivedString(function (received) {
     let casti = received.split("|")
 
     if (casti.length === 3 && casti[0] === "S") {
-        let serial: number = 
-        
+        let serial: number = radio.receivedPacket(RadioPacketProperty.SerialNumber)
+
+        if (serial === -978678300) {
             L = parseInt(casti[1])
             P = parseInt(casti[2])
+        }
+            
             
             
             
