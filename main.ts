@@ -34,6 +34,7 @@ basic.forever(function() {
 })
 
 radio.setGroup(234) //tomáš
+const heslo: string = "njimok@<>"
 radio.setGroup(37) //roman
 radio.setGroup(1) //tonda
 radio.setGroup(77) //tobi
