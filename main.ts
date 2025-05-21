@@ -38,28 +38,4 @@ basic.forever(function() {
 
 
 
-//radio.setGroup(234) //tomáš
-//const heslo: string = "njimok@<>"
-//radio.setGroup(37) //roman
-//radio.setGroup(1) //tonda
-//radio.setGroup(77) //tobi
-//radio.setGroup(253) //marek
-//radio.setGroup(15) //vilém
-//radio.setGroup(21) //martin
-//radio.setGroup(173) //kuba
-//radio.setGroup(12) //roman
-//radio.setGroup(23) //jára
-//radio.setGroup(22) //martin
-//radio.setTransmitPower(7)
-//radio.setFrequencyBand(50)
- 
-//basic.forever(function () {
- 
-//let leftMotor: number = 250
-//let rightMotor: number = 0
- 
-    //let hacker = "S|" + leftMotor + "|" + rightMotor
- 
-    //radio.sendString(hacker)
- 
-//})
+
