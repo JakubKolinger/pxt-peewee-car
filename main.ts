@@ -39,9 +39,21 @@ basic.forever(function() {
 
 
 
+basic.forever(function() {
+    let strip1 = neopixel.create(DigitalPin.P0, 9, NeoPixelMode.RGB)
+    let strip2 = neopixel.create(DigitalPin.P16, 9, NeoPixelMode.RGB)
 
-let strip1 = neopixel.create(DigitalPin.P0, 9, NeoPixelMode.RGB)
+    if (L < P){
+        strip1.setPixelColor(0, neopixel.colors(NeoPixelColors.Orange))
+        strip1.setPixelColor(1, neopixel.colors(NeoPixelColors.Orange))
+        strip1.setPixelColor(2, neopixel.colors(NeoPixelColors.Orange))
+    }
+    if (P < L){
+        strip1.setPixelColor(6, neopixel.colors(NeoPixelColors.Orange))
+        strip1.setPixelColor(7, neopixel.colors(NeoPixelColors.Orange))
+        strip1.setPixelColor(8, neopixel.colors(NeoPixelColors.Orange))
+    }
+    
+    strip1.show()
+})
 
-
-
-strip1.setPixelColor(0, neopixel.colors(NeoPixelColors.Orange))
