@@ -3,6 +3,10 @@ radio.setTransmitPower(7)
 radio.setFrequencyBand(81)
 radio.setTransmitSerialNumber(true)
 
+let strip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+
+strip.clear()
+
 let servo = ServoHelper.createServo()
 
 let L: number = 0;
@@ -44,25 +48,28 @@ basic.forever(function() {
 
 
 basic.forever(function() {
-    let strip1 = neopixel.create(DigitalPin.P0, 9, NeoPixelMode.RGB)
-    let strip2 = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+    
 
     speed1 = Math.map(speed, -250, 250, -4, 4)
     speedLED = Math.round(speed1)
     speedLED = Math.abs(speedLED)
+
+    
+
     if (speedLED === 1){
-        strip2.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
     }
     if (speedLED === 2){
-        strip2.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
     }
     if (speedLED === 3) {
-        strip2.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
     }
     if (speedLED === 4) {
-        strip2.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
-    strip2.show()
+
+    strip.show()
 })
 
 
