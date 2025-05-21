@@ -45,7 +45,7 @@ basic.forever(function() {
 
 basic.forever(function() {
     let strip1 = neopixel.create(DigitalPin.P0, 9, NeoPixelMode.RGB)
-    let strip2 = neopixel.create(DigitalPin.P16, 9, NeoPixelMode.RGB)
+    let strip2 = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 
     speed1 = Math.map(speed, -250, 250, -4, 4)
     speedLED = Math.round(speed1)
