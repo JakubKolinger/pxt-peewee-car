@@ -49,7 +49,7 @@ basic.forever(function() {
 
     speed1 = Math.map(speed, -250, 250, -4, 4)
     speedLED = Math.round(speed1)
-    
+    speedLED = Math.abs(speedLED)
     if (speedLED === 1){
         strip2.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
     }
