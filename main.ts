@@ -7,7 +7,7 @@ let servo = ServoHelper.createServo()
 let L: number = 0;
 let P: number = 0;
 
-basic.showIcon(IconNames.Happy)
+
 
 radio.onReceivedString(function (received) {
     let casti = received.split("|")
