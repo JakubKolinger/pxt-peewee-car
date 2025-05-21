@@ -40,8 +40,8 @@ basic.forever(function() {
 
 
 
-let strip = neopixel.create(DigitalPin.P0, 9, NeoPixelMode.RGB)
+let strip1 = neopixel.create(DigitalPin.P0, 9, NeoPixelMode.RGB)
 
 
 
-
+strip1.setPixelColor(0, neopixel.colors(NeoPixelColors.Orange))
