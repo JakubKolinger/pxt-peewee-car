@@ -4,6 +4,7 @@ radio.setFrequencyBand(81)
 radio.setTransmitSerialNumber(true)
 
 let servo = ServoHelper.createServo()
+
 let L: number = 0;
 let P: number = 0;
 
@@ -27,14 +28,19 @@ radio.onReceivedString(function (received) {
     }
 })
 
-
-
 basic.forever(function() {
     
     PCAmotor.MotorRun(PCAmotor.Motors.M1, L)
 
     PCAmotor.MotorRun(PCAmotor.Motors.M4, P * -1)
 })
+
+
+
+
+
+
+let strip = neopixel.create(DigitalPin.P0, 9, NeoPixelMode.RGB)
 
 
 
