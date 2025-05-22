@@ -51,28 +51,38 @@ basic.forever(function() {
 
 
 basic.forever(function() {
-    speed1 = Math.map(speed, -250, 250, -200, 200)
+    speed1 = Math.map(speed, -9, 9, -4, 4)
     speed1 = Math.round(speed1)
     speedLED = Math.abs(speed1)
 
     
 
-    if (speedLED > 0 && speedLED <= 50) { 
-        strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+    if (speedLED === 1) { 
+        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
-    if (speedLED > 50 && speedLED <= 100) { 
-        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
-    }
-    if (speedLED > 100 && speedLED <= 150) {  
+    if (speedLED === 2) { 
         strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
-    if (speedLED > 150 && speedLED <= 200) {   
+    if (speedLED === 3) {  
+        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+    }
+    if (speedLED === 4) {   
+        strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
         strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
 
     strip.show()
     strip.clear()
 })
+
+
+
+
 
 
 
