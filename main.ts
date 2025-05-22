@@ -43,18 +43,18 @@ basic.forever(function() {
 
     PCAmotor.MotorRun(PCAmotor.Motors.M4, P * -1)
 
-    basic.showNumber(speedLED)
+})
 
+basic.forever(function() {
+    speedLED = Math.map(speed, -9, 9, -4, 4)
+    speedLED = Math.round(speedLED)
+    speedLED = Math.abs(speedLED)
 })
 
 
 
-
-
 basic.forever(function() {
-    speed1 = Math.map(speed, -9, 9, -4, 4)
-    speed1 = Math.round(speed1)
-    speedLED = Math.abs(speed1)
+    
 
     
 
@@ -90,21 +90,23 @@ basic.forever(function() {
 
 basic.forever(function() {
     
-    if (P < L && L > 5){
+    if (P < L && speedLED > 0) {
         strip2.setPixelColor(6, neopixel.colors(NeoPixelColors.Orange))
         strip2.setPixelColor(7, neopixel.colors(NeoPixelColors.Orange))
         strip2.setPixelColor(8, neopixel.colors(NeoPixelColors.Orange))
     }
-    if (L < P && P > 5){
+    if (L < P && speedLED > 0) {
         strip2.setPixelColor(0, neopixel.colors(NeoPixelColors.Orange))
         strip2.setPixelColor(1, neopixel.colors(NeoPixelColors.Orange))
         strip2.setPixelColor(2, neopixel.colors(NeoPixelColors.Orange))
     }
-    if (P > 5 && L > 5){
+    if (P > 5 && L > 20) {
         strip2.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
         strip2.setPixelColor(4, neopixel.colors(NeoPixelColors.Red))
         strip2.setPixelColor(5, neopixel.colors(NeoPixelColors.Red))
     }
+    
+    
 
     strip2.show()
     strip2.clear()
