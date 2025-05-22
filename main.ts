@@ -3,7 +3,8 @@ radio.setTransmitPower(7)
 radio.setFrequencyBand(81)
 radio.setTransmitSerialNumber(true)
 
-let strip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+let strip1 = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+let strip2 = neopixel.create(DigitalPin.P0, 9, NeoPixelMode.RGB)
 
 
 
@@ -58,26 +59,26 @@ basic.forever(function() {
     
 
     if (speedLED === 1) { 
-        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
     if (speedLED === 2) { 
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
     if (speedLED === 3) {  
-        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
     if (speedLED === 4) {   
-        strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
-        strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
-        strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-        strip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        strip1.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
     }
 
-    strip.show()
-    strip.clear()
+    strip1.show()
+    strip1.clear()
 })
 
 
@@ -87,3 +88,24 @@ basic.forever(function() {
 
 
 
+basic.forever(function() {
+    
+    if (P < L && L > 5){
+        strip2.setPixelColor(6, neopixel.colors(NeoPixelColors.Orange))
+        strip2.setPixelColor(7, neopixel.colors(NeoPixelColors.Orange))
+        strip2.setPixelColor(8, neopixel.colors(NeoPixelColors.Orange))
+    }
+    if (L < P && P > 5){
+        strip2.setPixelColor(0, neopixel.colors(NeoPixelColors.Orange))
+        strip2.setPixelColor(1, neopixel.colors(NeoPixelColors.Orange))
+        strip2.setPixelColor(2, neopixel.colors(NeoPixelColors.Orange))
+    }
+    if (P > 5 && L > 5){
+        strip2.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
+        strip2.setPixelColor(4, neopixel.colors(NeoPixelColors.Red))
+        strip2.setPixelColor(5, neopixel.colors(NeoPixelColors.Red))
+    }
+
+    strip2.show()
+    strip2.clear()
+})
